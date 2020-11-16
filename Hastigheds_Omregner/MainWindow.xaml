@@ -1,0 +1,58 @@
+﻿<Window x:Class="Hastigheds_Omregner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hastigheds_Omregner" xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="2" Width="950" CornerRadius="10" BorderThickness="5">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#000000" Offset="0.0" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Rectangle Grid.Row="2">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FFE042" Offset="0.0"></GradientStop>
+                        <GradientStop Color="#E71989" Offset="0.5"></GradientStop>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Border>
+        <StackPanel Grid.Row="2" Width="1000" Height="60" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label Content="Indtast beløb:" FontSize="20" Width="150" Height="40" VerticalAlignment="Bottom" Foreground="White" Margin="100,0,0,0"/>
+
+            <Label Content="Fra:" FontSize="20" Width="150" Height="40" VerticalAlignment="Bottom" Foreground="White" Margin="135,0,0,0"/>
+
+            <Label Content="Til:" FontSize="20" Width="150" Height="40" VerticalAlignment="Bottom" Foreground="White" Margin="145,0,0,0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Width="800" Height="90" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <TextBox Name="txtCurrency" Width="200" Height="30" Margin="0,0,0,0" PreviewTextInput="NumberValidationTextBox" FontSize="18"
+                     VerticalContentAlignment="Center" VerticalAlignment="Top"></TextBox>
+
+            <ComboBox Name="cmbFromCurrency" x:FieldModifier="public" Width="170" Height="30" Margin="60,0,40,0" FontSize="18" VerticalContentAlignment="Center" 
+                      VerticalAlignment="Top" MaxDropDownHeight="150"></ComboBox>
+
+            <fa:ImageAwesome Icon="Exchange" Height="30" Width="30" Foreground="White" VerticalAlignment="Top" Margin="25,0,0,0"></fa:ImageAwesome>
+            <ComboBox Name="cmbToCurrency" Width="170" Height="30" Margin="60,0,40,0" FontSize="18" VerticalContentAlignment="Center"
+                      VerticalAlignment="Top" MaxDropDownHeight="150"></ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label FontSize="30" FontFamily="Times New Roman" HorizontalAlignment="Center">Hastigheds Omregner</Label>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Height="100" Width="300" Background="Transparent" FontSize="30" FontFamily="Times New Roman" BorderBrush="Transparent">Omregn</Button>
+        </StackPanel>
+    </Grid>
+</Window>
